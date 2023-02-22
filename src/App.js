@@ -10,6 +10,7 @@ function App() {
       <Course tittle="Javascript" price="99999" description="PERFECT"></Course>
       {/* <Course></Course> */}
       {/* <Teacher></Teacher> */}
+      {/* <Teacher teacherName="yasamin" /> */}
       <Teacher teacherName="yasamin" />
     </div>
   );
