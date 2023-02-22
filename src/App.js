@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Course from './Course';
+import Teacher from './Teacher';
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Course title="ReactJs" price="9999" description="React is a useful course."></Course>
+      <Teacher firstName="Mohsen" lastName="Naderi"></Teacher>
+      <Course title="JavaScript" price="8888" description="React is another useful course."></Course>
+      <Teacher firstName="Ali" lastName="Khodashenas"></Teacher>
     </div>
   );
 }
