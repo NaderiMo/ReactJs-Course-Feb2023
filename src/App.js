@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Course from './Course';
+import Teacher from './Teacher';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Course title="Java" price="535463" description="Desc"></Course>
+      {/* <Course title="React" price="5555" description="Desc"></Course> */}
+      <Teacher firstName="Nahid" lastName="Nasiri">
+      </Teacher>
     </div>
   );
 }
