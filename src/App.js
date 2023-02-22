@@ -1,10 +1,12 @@
 import logo from './logo.svg';
+import Course from './Course';
+import Teacher from  './Teacher' ;
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +19,9 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Course title="ReactJs" price= "9999" />
+     <Teacher teacherName="shohreh"/>
     </div>
   );
 }
