@@ -7,6 +7,7 @@ function Course(props){
             <p>{props.description}</p>
             <h1></h1>
             <h1>test</h1>
+            <p>jksdhfchf</p>
         </div>
     )
 }
