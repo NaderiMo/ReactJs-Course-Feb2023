@@ -1,15 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import Course from './Course';
-import Teacher from './Teacher';
+import MyForm from './component/MyForm';
+
 
 function App() {
   return (
    
-/* <Course></Course> */
 <div>
-<Teacher name = "hashemi" age="30"/> 
-{/* <Course name="rahim" age="20"/>    */}
+<MyForm label="user name " placeholder="input here" type="text"></MyForm>
+  <MyForm label="password " placeholder="input here" type="password"></MyForm>
 </div>
  
   );
