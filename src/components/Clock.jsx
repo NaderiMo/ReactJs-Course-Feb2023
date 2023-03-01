@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Clock({cardnumber,type})
+function Clock()
 {
     const[date,setDate] = useState(new Date())
 
