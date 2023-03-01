@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Container,Col,Row } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './component/Login';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+
+
+
+<Container fluid>
+      <Row>
+      <Col md={3} xs={6}>
+        <Login/>
+      </Col>
+      </Row>
+    </Container>
+
+
+
+
   </React.StrictMode>
 );
 

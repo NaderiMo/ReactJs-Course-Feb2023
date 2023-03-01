@@ -31,9 +31,9 @@ const newCard =  [
     <div>
         {
         cardsState.map(
-            (item)=>
+            (item,index)=>
             (
-            <Card key={item.cardNamber}
+            <Card key={index}
         cardNamber={item.cardNumber}
         type={item.type} 
         ></Card>))}
