@@ -3,11 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import CardList from "./component/CardList";
+import clock from "./component/Clock";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Countainer , Row ,Col} from 'react';
+  
+
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<React.StrictMode>
   {/* <App /> */}
+  <Clock/>
   <CardList/>
   </React.StrictMode>);
 
