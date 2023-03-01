@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CardList from './CardList';
+import App from './App.js';
+import Clock from './Clock';
+import Counter from './Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-    <CardList/>
+    <Counter/>
+    <Clock/>
   </React.StrictMode>
 );
 
