@@ -2,15 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './App.js';
-import Clock from './Clock';
-import Counter from './Counter';
+import Login from './Login'
+import Login2 from './Login2';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Counter/>
-    <Clock/>
+
+    {/* <CardList/> */}
+    <Container>
+      <Row>
+        <Col md={3} xs={6}>
+          <Login2 />
+        </Col>
+      </Row>
+    </Container>
+
+    {/* <Avator/> */}
   </React.StrictMode>
 );
 

@@ -6,13 +6,13 @@ function Clock() {
 
     let clk = new Date().toLocaleTimeString();
 
-    setInterval(()=>{
+    setInterval(() => {
         setClock(new Date().toLocaleTimeString())
-    },1000);
+    }, 1000);
 
     return (
         <div>
-            <h1> {clock}</h1>
+            <h1 style={backgroundColor = 'aqua'}> {clock}</h1>
             <hr />
         </div>
     )
