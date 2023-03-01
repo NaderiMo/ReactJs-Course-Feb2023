@@ -1,13 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import Clock from './components/Clock';
+// import CardList from './components/CardList';
+// import Counter from './components/Counter';
+import Login from './components/Login';
 import reportWebVitals from './reportWebVitals';
+import { Container } from 'react-bootstrap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/*<Card cardNo={"000000000"} type="bon card"/>*/}
+    {/* <CardList /> */}
+    {/* <Counter/> */}
+    {/* <Clock/> */}
+
+    <Container fluid>
+      <Row>
+        <Col>
+           <Login/>
+        </Col>
+      </Row>
+    </Container>
+    
   </React.StrictMode>
 );
 
