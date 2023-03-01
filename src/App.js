@@ -1,14 +1,20 @@
+import { Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-import CardList from "./components/CardList";
-import Clock from "./components/Clock";
-import Counter from "./components/Counter";
+import Login from "./components/Login";
 
 function App() {
   return (
     <div className="App">
-      <CardList></CardList>
+      {/* <CardList></CardList>
       <Clock />
-      <Counter />
+      <Counter /> */}
+      <Container fluid>
+        <Row>
+          <Col md={3} xs={6}>
+            <Login />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
