@@ -31,8 +31,8 @@ function CardList({ }) {
         <div>
             {
                 cardsState.map(
-                    (item) => (
-                        <Card cardNumber={item.cardNumber} type={item.type} />
+                    (item,index) => (
+                        <Card key={index} cardNumber={item.cardNumber} type={item.type} />
                     )
                 )
             }
