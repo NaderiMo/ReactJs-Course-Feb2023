@@ -8,9 +8,11 @@ function Clock()
      setDate (new Date()) 
     }, 1000)
 
+    const h1style = { backgroundColor : '#ffcc00'}
+
     return(
         <div>
-            <h1>{date.toLocaleTimeString()}</h1>
+            <h1 style = {h1style}> {date.toLocaleTimeString()} </h1>
         </div>
     )
 }
