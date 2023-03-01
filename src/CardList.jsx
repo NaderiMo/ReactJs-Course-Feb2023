@@ -1,5 +1,5 @@
 import Card from "./Card";
-import {useState} from "react";
+import { useState } from "react";
 
 function CardList() {
 
@@ -8,13 +8,18 @@ function CardList() {
         { cardNumber: "6104051246789887", cardType: "2بن کارت" },
         { cardNumber: "6104051246781235", cardType: "3بن کارت" }]
 
-    const [cardState, setCards] = useState();
+    const [cardState, setCards] = useState(cards);
 
     const loadMore = () => {
         alert('clicked');
         setCards([{ cardNumber: "12121212", cardType: "3بن کارت" }]);
-        console.log(cards)
+        console.log(cardState)
     }
+
+    const loading = () => {
+        alert('loading is calling...');
+    }
+
     return (
         <div>
             {

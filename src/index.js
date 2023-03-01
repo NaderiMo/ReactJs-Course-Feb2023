@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+// import Card from'./Card';
 import CardList from './CardList';
+import Login from './Login';
+import Avator from './Avator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-    <CardList/>
+    {/* <CardList/> */}
+    <Login/>
+    {/* <Avator/> */}
   </React.StrictMode>
 );
 
