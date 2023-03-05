@@ -25,7 +25,7 @@ function CardList({ }) {
 
     const loadMore = () => {
         setCards([...firstListOfCards, ...newCards])
-    }
+    } 
 
     return (
         <div>
