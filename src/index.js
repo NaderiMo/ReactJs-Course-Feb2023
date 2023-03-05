@@ -21,7 +21,7 @@ root.render(
     </Container>
     {/* <Counter/> */}
     {/* <CardList/> */}
-    <Clock/>
+    {/* <Clock/> */}
   </React.StrictMode>
 );
 
