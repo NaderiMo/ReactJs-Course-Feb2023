@@ -5,12 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import CardList from './components/CardList';
 import Clock from './components/Clock';
 import Counter from './components/Counter';
+import Login from './components/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Counter />
-    <Clock />
+    <Login />
+    {/* <Counter />
+    <Clock /> */}
   </React.StrictMode>
 );
 
