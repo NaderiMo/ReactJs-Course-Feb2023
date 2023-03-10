@@ -4,26 +4,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 export default function Login() {
-  const [loginState, setLoginSate] = useState({
+  const [loginState, setLoginState] = useState({
     userName: null,
     passWord: null,
   });
+
+  const baseURL = "https://6408e3ead16b1f3ed6c5a495.mockapi.io";
 
   const defaultSate = { userName: "", passWord: "" };
 
   const [errorState, setErrorState] = useState({ defaultSate });
 
-  const [responseState, setResponseSate] = useState({
-    responseCode: "",
-    responseDesc: "",
+  const [responseState, setResponseState] = useState({
+    submitStatus: null,
+    userName: null,
   });
 
   const validateLogin = () => {
+    setErrorState(defaultSate);
+    setResponseState({ ...responseState, submitStatus: "0" });
+
     if (!loginState.userName) {
       setErrorState({ userName: "userName is invalid" });
       return false;
     }
-    // setErrorState(defaultSate);
 
     if (!loginState.passWord) {
       setErrorState({ passWord: "passWord is invalid" });
@@ -37,23 +41,32 @@ export default function Login() {
     if (!validateLogin()) return;
 
     axios
-      .post("https://6404753c3bdc59fa8f39554b.mockapi.io/users", loginState)
+      .post(baseURL + "/users", loginState)
       .then((res) => {
         console.log(res);
-        // setResponseSate(res);
+        const user = res.data;
+        const status = res.status;
+        console.log(user);
+        console.log(status);
+
+        setResponseState({
+          userName: loginState.userName,
+          submitStatus: status,
+        });
       })
       .catch((res) => {
         console.log(res);
-        // setResponseSate(res);
       });
+
+    console.log(responseState);
   };
 
   const onUserNameChange = (event) => {
-    setLoginSate({ ...loginState, userName: event.target.value });
+    setLoginState({ ...loginState, userName: event.target.value });
   };
 
   const onPassWordChange = (event) => {
-    setLoginSate({ ...loginState, passWord: event.target.value });
+    setLoginState({ ...loginState, passWord: event.target.value });
   };
   return (
     <>
@@ -85,8 +98,13 @@ export default function Login() {
           submit();
         }}
       >
-        Login
+        Register
       </Button>
+      {responseState.submitStatus == "201" && (
+        <p className="text-warn">
+          {responseState.userName} userName created successfully.
+        </p>
+      )}
     </>
   );
 }
