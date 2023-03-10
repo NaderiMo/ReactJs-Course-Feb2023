@@ -43,8 +43,8 @@ export default function User() {
   };
 
   const onUserNameChange = (event) => {
-    console.log();
     setUserState({ ...userState, userName: event.target.value });
+    console.log("userState", userState);
   };
 
   if (!userState) return "No user!";
