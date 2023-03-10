@@ -28,6 +28,7 @@ export default function User() {
   };
 
   const editUser = (item) => {
+    console.log("userState2", userState);
     setEditState(true);
     axios
       .put(baseURL + "/users/" + item.id, { userName: userState.userName })
@@ -53,21 +54,21 @@ export default function User() {
     <>
       <div>
         <p>User is :</p>
-        {item.id}
-        <h1>{item.name}</h1>
+        {userState.id}
+        <h1>{userState.name}</h1>
 
         <Form.Control
           type="text"
           id="userName"
-          defaultValue={item.userName}
+          defaultValue={userState.userName}
           onChange={(event) => {
             onUserNameChange(event);
           }}
         />
 
         {/* <h1>{item.userName}</h1> */}
-        <Button onClick={() => deleteUser(item)}>Delete User</Button>
-        <Button onClick={() => editUser(item)}>Edit User</Button>
+        <Button onClick={() => deleteUser(userState)}>Delete User</Button>
+        <Button onClick={() => editUser(userState)}>Edit User</Button>
       </div>
     </>
   );
