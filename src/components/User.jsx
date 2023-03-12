@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import req from "../configs/requests";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
@@ -8,14 +8,12 @@ export default function User() {
   console.log("location", location);
   const { item } = location.state;
 
-  const baseURL = "https://6408e3ead16b1f3ed6c5a495.mockapi.io";
-
   const [userState, setUserState] = useState(item);
   const [editState, setEditState] = useState(false);
 
   const deleteUser = (item) => {
-    axios
-      .delete(baseURL + "/users/" + item.id)
+    req
+      .delete("/users/" + item.id)
       .then((response) => {
         console.log(response.data);
         alert(item.userName + "  deleted!");
@@ -30,8 +28,9 @@ export default function User() {
   const editUser = (item) => {
     console.log("userState2", userState);
     setEditState(true);
-    axios
-      .put(baseURL + "/users/" + item.id, { userName: userState.userName })
+
+    req
+      .put("/users/" + item.id, { userName: userState.userName })
       .then((response) => {
         console.log(response.data);
         alert(userState.userName + "  edited!");

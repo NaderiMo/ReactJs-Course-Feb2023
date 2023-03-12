@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
+import req from "../configs/requests";
 
 export default function Login() {
   const [loginState, setLoginState] = useState({
@@ -9,7 +9,7 @@ export default function Login() {
     passWord: null,
   });
 
-  const baseURL = "https://6408e3ead16b1f3ed6c5a495.mockapi.io";
+  const [isLoading, setIsLoading] = useState(false);
 
   const defaultSate = { userName: "", passWord: "" };
 
@@ -39,15 +39,14 @@ export default function Login() {
 
   const submit = () => {
     if (!validateLogin()) return;
+    setIsLoading(true);
 
-    axios
-      .post(baseURL + "/users", loginState)
+    req
+      .post("/users", loginState)
       .then((res) => {
-        console.log(res);
         const user = res.data;
         const status = res.status;
-        console.log(user);
-        console.log(status);
+        setIsLoading(false);
 
         setResponseState({
           userName: loginState.userName,
@@ -55,6 +54,7 @@ export default function Login() {
         });
       })
       .catch((res) => {
+        setIsLoading(false);
         console.log(res);
       });
 
@@ -93,14 +93,22 @@ export default function Login() {
       {errorState.passWord && (
         <p className="text-danger">{errorState.passWord}</p>
       )}
-      <Button
-        onClick={() => {
-          submit();
-        }}
-      >
-        Register
-      </Button>
-      {responseState.submitStatus == "201" && (
+
+      {isLoading ? (
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      ) : (
+        <Button
+          onClick={() => {
+            submit();
+          }}
+        >
+          Register
+        </Button>
+      )}
+
+      {responseState.submitStatus === "201" && (
         <p className="text-warn">
           {responseState.userName} userName created successfully.
         </p>
