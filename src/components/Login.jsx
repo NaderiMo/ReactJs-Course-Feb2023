@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Spinner } from 'react-bootstrap';
+import req from "../configs/requests";
 
 function Login() {
-
+    const [isLoading, setIsLoading] = useState(false)
     const [loginState, setLoginState] = useState({
         username: null,
         password: null
@@ -23,6 +24,7 @@ function Login() {
     }
 
     const submit = () => {
+
         if (!loginState.username) {
             setErrorState({ username: "Invalid Username!", password: "" })
             return;
@@ -31,13 +33,34 @@ function Login() {
             setErrorState({ username: "", password: "Invalid Password!" })
             return;
         }
+        if (isLoading) return;
         setErrorState(defaultErrorState)
 
-        // axios.get("api endpoint",data).then((res)=>{}).catch((error)=>{})
-        axios.post("https://6404753c3bdc59fa8f39554b.mockapi.io/users", loginState)
-            .then((res) => { debugger; })
-            .catch((err) => { debugger; })
+        // axios.defaults.baseURL = "https://6404753c3bdc59fa8f39554b.mockapi.io";
+        // axios.defaults.timeout = 60000;
+        setIsLoading(true)
 
+        // const config = {
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded'
+        //     }
+        // }
+
+        // axios.post("/users", loginState)
+        //     .then((res) => {
+        //         setIsLoading(false)
+        //     })
+        //     .catch((err) => {
+        //         setIsLoading(false)
+        //     })
+
+        req.post("/users", loginState)
+            .then((res) => {
+                setIsLoading(false)
+            })
+            .catch((err) => {
+                setIsLoading(false)
+            })
     }
 
     return (<>
@@ -60,7 +83,10 @@ function Login() {
             onChange={(event) => onChangePassword(event)}
         />
         {errorState.password && <p className="text-danger">{errorState.password}</p>}
-        <Button className="btn btn-success" onClick={() => submit()}>Login</Button>
+        {isLoading
+            ? <Spinner animation="border" />
+            : <Button className="btn btn-success" onClick={() => submit()}>Login</Button>
+        }
 
     </>)
 }
