@@ -6,3 +6,4 @@ function Card({cardNumber,type}) {
     </div>)
 }
 export default Card;
+ 
