@@ -8,17 +8,23 @@ import Counter from './components/Counter';
 import Login from './components/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row ,Container,Col} from 'react-bootstrap';
+import { RouterProvider } from "react-router-dom"
+import router from './configs/router';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
- <Container fluid>
+    <RouterProvider router = {router}/>
+ {/* <Container fluid>
   <Row>
     <Col md={3} xs={6}>
       <Login />
     </Col>
   </Row>
- </Container>
+ </Container> */}
   </React.StrictMode>
 );
 

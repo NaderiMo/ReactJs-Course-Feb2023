@@ -1,10 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import req from "../configs/requests";
 
 function Login()
+
 {
+   const[isLoading,setIsLoading]=useState(false)
+
     const[loginState,setLoginState] = useState({
         username :"" ,
         password : ""
@@ -45,9 +49,15 @@ function Login()
 
         })
 
-        axios.post("https://6404753c3bdc59fa8f39554b.mockapi.io/users",loginState)
-        .then((res)=> {debugger;})
-        .catch((error) => {debugger;})
+        // axios.defaults.baseURL="https://6404753c3bdc59fa8f39554b.mockapi.io";
+        // axios.defaults.timeout=1;
+        setIsLoading(true)
+
+        req.post("/users",loginState)
+        .then((res)=> {setIsLoading(false);})
+        .catch((error) => {setIsLoading(false);})
+
+
 
     }
 
@@ -69,9 +79,15 @@ function Login()
            />
 
          {errorState.username  && <p className = "text-danger"> {errorState.username} </p>} 
-         {errorState.password  && <p className = "text-danger"> {errorState.password} </p>}   
+         {errorState.password  && <p className = "text-danger"> {errorState.password} </p>}
 
-       <Button onClick={()=> submit()}>Login</Button><hr />
+       { isLoading 
+       ? <Spinner animation="border" />
+       : <Button onClick={()=> submit()}>Login</Button>
+        }
+    {/* //    <Button onClick={()=> submit()}>Login</Button><hr /> */}
+       
+       
        {loginState.username}<hr />
         {loginState.password}
     </>)
