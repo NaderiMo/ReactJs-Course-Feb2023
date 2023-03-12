@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import axios from "axios";
+import req from "../configs/requests";
 
 function Login() {
     const defaultErrorState = {
@@ -8,6 +9,7 @@ function Login() {
         passwordError: null
     }
 
+    const [isLoading, setIsLoading] = useState(false)
     const [loginState, setLoginState] = useState({
         userName: null,
         password: null
@@ -32,10 +34,26 @@ function Login() {
             return;
         }
         setErrorState(defaultErrorState);
+        setIsLoading(true)
+        axios.defaults.baseURL = "https://6404753c3bdc59fa8f39554b.mockapi.io";
+        axios.defaults.timeout = 20;
 
-        axios.post("https://6404753c3bdc59fa8f39554b.mockapi.io/users", loginState)
-            .then((res) => { debugger; })
-            .catch((err) => { debugger; })
+        // axios.post("/users", loginState)
+        //     .then((res) => { setIsLoading(false) })
+        //     .catch((err) => { setIsLoading(false); })
+
+        // use custom config not default
+        //  const config = {
+        //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        // }
+        //  axios.post("/users", loginState, config)
+        //     .then((res) => { setIsLoading(false) })
+        //     .catch((err) => { setIsLoading(false); }) 
+
+        //use axios instanse
+        req.post("/users", loginState)
+            .then((res) => { setIsLoading(false) })
+            .catch((err) => { setIsLoading(false); })
 
     }
 
@@ -46,7 +64,10 @@ function Login() {
             {errorState.userNameError && <p className="text-danger">{errorState.userNameError}</p>}
             <Form.Control type="password" id="password" onChange={(event) => onChangePassword(event)} />
             {errorState.passwordError && <p className="text-danger">{errorState.passwordError}</p>}
-            <Button onClick={() => submit()}>Login</Button>
+            {isLoading
+                ? <Spinner animation="border" />
+                : <Button onClick={() => submit()}>Login</Button>}
+
             {/* <hr /> */}
             {/* {loginState.userName} */}
             {/* <hr /> */}

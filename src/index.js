@@ -2,26 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import CardList from './components/CardList';
-import Clock from './components/Clock';
-import Counter from './components/Counter';
 import { Col, Container, Row } from 'react-bootstrap';
 import Login from './components/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { RouterProvider } from 'react-router-dom';
+import router from './configs/routers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Container fluid>
+    {/* <Container fluid>
       <Row>
         <Col md={3} xs={6}>
           <Login/>
         </Col>
       </Row>
-    </Container>
-    {/* <Counter/> */}
-    {/* <CardList/> */}
-    {/* <Clock/> */}
+    </Container> */}
+
+
+    <RouterProvider router={router} />
+
+
   </React.StrictMode>
 );
 
