@@ -7,3 +7,4 @@ export default function Rout({ path, children }) {
   }
   return children;
 }
+

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import Clock from "./Clock";
 
 function Login() {
     const defaultError = {
@@ -15,6 +16,9 @@ function Login() {
     username: null,
     password: null,
   });
+
+  // const [loadState,setLoadState] = setIsloading({
+  // })
 
   const onChangUserName = (event) => {
     setLoginState({ ...loginState, username: event.target.value });
@@ -43,6 +47,8 @@ function Login() {
     .catch((err) => {debugger;})
   };
 
+
+  
   return (
     <>
       <Form.Label id="lbl1">userName</Form.Label>
@@ -71,7 +77,8 @@ function Login() {
       <hr/>
       {loginState.password}
       <h1 id="say"></h1>
-    </>
+      <h1><Clock/></h1>
+    </>               
   );
 }
 export default Login;
