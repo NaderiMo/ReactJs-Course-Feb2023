@@ -8,4 +8,11 @@ const req = axios.create({
     headers: {'X-Custom-Header': 'foobar'}
   });
 
-  export default req
+req.interceptors.request.use(function (config){
+  console.log("axois req log",config)
+return config;
+}, function(error){
+  return Promise.reject(error);
+});
+
+  export default req;

@@ -8,29 +8,13 @@ import Login from "./component/Login";
 import Rout from "./component/router/Rout";
 import Auth from "./component/router/Auth";
 import Index from "./component/router/Index";
-
+import {  RouterProvider } from "react-router-dom";
+import router from "./configs/router";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <Rout path='/login'>
-      <Login />
-    </Rout>
-
-    <Rout path='/auth'>
-      <Auth />
-    </Rout>
-
-    <Rout path='/'>
-      <Index />
-    </Rout>
-
-    <Container fluid>
-      <Row>
-        <Col md={3} xs={6}>
-          {/* <Login /> */}
-        </Col>
-      </Row>
-    </Container>
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
