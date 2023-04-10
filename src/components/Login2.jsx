@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
 import req from "../configs/requests";
 
-function Login() {
+function Login2() {
   const [isLoading, setIsLoading] = useState(false);
   const [loginState, setLoginState] = useState({
     username: null,
@@ -85,4 +85,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default Login2;

@@ -6,7 +6,7 @@ import axios from "axios";
 import { useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
 
-function Login() {
+function Login1() {
   const [isLoading, setIsLoading] = useState(false);
   const [loginState, setLoginState] = useState({
     username: null,
@@ -93,4 +93,4 @@ function Login() {
     </>
   );
 }
-export default Login;
+export default Login1;
