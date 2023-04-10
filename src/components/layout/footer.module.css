@@ -1,0 +1,9 @@
+.container {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+}
+
+.bgYellow {
+    background-color: #ffcc00;
+}
