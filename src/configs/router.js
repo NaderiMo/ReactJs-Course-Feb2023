@@ -12,43 +12,29 @@ import Clock from "../component/Clock";
 import Login from "../component/Login";
 import CardList from "../component/CardList";
 import Counter from "../component/Counter";
+import Header from "../component/layout/Header";
+import Footer from "../component/layout/Footer";
+import CheckUseState from "../component/hooks/UseState";
+import Timer from "../component/hooks/Timer";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Navbar bg="light" expand="lg">
-          <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/login">login</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-
+        
+<Header />
         <Container>
           <Outlet />
         </Container>
-
-        <Container>
-          <Row>
-            <Col>col 1</Col>
-            <Col>col 2</Col>
-            <Col>col 3</Col>
-            <Col>col 4</Col>
-          </Row>
-        </Container>
+<Footer />
+      
         
       </>
     ),
     children: [
       {
-        path: "/login",
+        path: "/login2",
         element: <Login />,
       },
       {
@@ -77,6 +63,14 @@ const router = createBrowserRouter([
     path: "/Counter",
     element: <Counter />,
   },
+  {
+    path: "/state",
+    element: <CheckUseState />,
+  },
+  {
+    path: "/Timer",
+    element: <Timer />,
+  }
 ]);
 
 export default router;
