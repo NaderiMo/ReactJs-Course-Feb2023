@@ -1,47 +1,41 @@
 
-import { createBrowserRouter, Outlet } from "react-router-dom"
-import Login from "../components/Login"
+import { Container } from "react-bootstrap";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import CardList from '../components/CardList';
 import Clock from '../components/Clock';
 import Counter from '../components/Counter';
-import { Container, Navbar, NavDropdown, Nav, Col ,Row} from "react-bootstrap";
+import Timer from "../components/hooks/Timer";
+import Calculation from "../components/hooks/Calculation";
+import CheckUseState from "../components/hooks/UseState";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
+import Login1 from "../components/Login1";
+import Login2 from "../components/Login2";
+
 const router = createBrowserRouter([
     {
         path: "/", element: (
             <>
-                <Navbar bg="light" expand="lg">
-                    <Container>
-                        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="me-auto">
-                                <Nav.Link href="/">Home</Nav.Link>
-                                <Nav.Link href="/login">Login</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
+                <Header />
                 <Container >
                     <Outlet />
                 </Container>
-                <Container >
-                    <Row>
-                        <Col>Col 1</Col>
-                        <Col>Col 2</Col>
-                        <Col>Col 3</Col>
-                        <Col>Col 4</Col>
-                    </Row>
-                </Container>
+                <Footer />
             </>
         ),
+        
         children: [
-            { path: "/login", element: (<Login />) },
+            { path: "/login1", element: (<Login1 />) },
+            { path: "/login2", element: (<Login2 />) },
             { path: "/signup", element: (<div><h1>SignUp</h1></div>) }
         ]
     },
     { path: "/CardList", element: (<CardList />) },
     { path: "/Clock", element: (<Clock />) },
     { path: "/Counter", element: (<Counter />) },
+    { path: "/CheckUseState", element: (<CheckUseState />) },
+    { path: "/Timer", element: (<Timer />) },
+    { path: "/Calculation", element: (<Calculation />) },
 ])
 
 export default router
