@@ -11,6 +11,8 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Login1 from "../components/Login1";
 import Login2 from "../components/Login2";
+import RenderLogger from "../components/hooks/RenderLogger";
+import TodoContainer from "../components/hooks/TodoContainer";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +38,8 @@ const router = createBrowserRouter([
     { path: "/CheckUseState", element: (<CheckUseState />) },
     { path: "/Timer", element: (<Timer />) },
     { path: "/Calculation", element: (<Calculation />) },
+    { path: "/RenderLogger", element: (<RenderLogger />) },
+    { path: "/todo", element: (<TodoContainer />) },
 ])
 
 export default router;
