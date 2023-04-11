@@ -3,8 +3,10 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import CardList from "../components/CardList";
 import Clock from "../components/Clock";
 import Counter from "../components/hooks/Counter";
+import RenderLogger from "../components/hooks/RenderLog";
 // import Counter from "../components/Counter";
 import Timer from "../components/hooks/Timer";
+import TodoContainer from "../components/hooks/TodoContainer";
 import CheckUseState from "../components/hooks/UseState";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
@@ -32,7 +34,9 @@ const router = createBrowserRouter([
     { path: "/Clock", element: (<Clock />)},
     { path: "/check", element: (<CheckUseState />)},
     { path: "/timer", element: (<Timer />)},
-    { path: "/counter", element: (<Counter />)}
+    { path: "/counter", element: (<Counter />)},
+    { path: "/renderLog", element: (<RenderLogger />)},
+    { path: "/todo", element: (<TodoContainer />)}
   ])
 
   export default router;
