@@ -13,6 +13,8 @@ import Login1 from "../components/Login1";
 import Login2 from "../components/Login2";
 import RenderLogger from "../components/hooks/RenderLogger";
 import TodoContainer from "../components/hooks/TodoContainer";
+import UseReducerComponent from "../components/hooks/UseReducer";
+import TabContainer from "../components/hooks/tabs/TabContainer";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +42,8 @@ const router = createBrowserRouter([
     { path: "/Calculation", element: (<Calculation />) },
     { path: "/RenderLogger", element: (<RenderLogger />) },
     { path: "/todo", element: (<TodoContainer />) },
+    { path: "/useReducer", element: (<UseReducerComponent />) },
+    { path: "/tabs", element: (<TabContainer />) },
 ])
 
 export default router;
