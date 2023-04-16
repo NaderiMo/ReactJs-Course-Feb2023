@@ -8,6 +8,7 @@ import HookCounter from "../components/hooks/HookCounter";
 import RenderLog from "../components/hooks/RenderLog";
 import TodoContainer from "../components/hooks/TodoContainer";
 import UseMemoCom from "../components/hooks/UseMemo";
+import UserReducerComponent from "../components/hooks/UserReducer";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
   { path: "/RenderLog", element: <RenderLog /> },
   { path: "/TodoContainer", element: <TodoContainer /> },
   { path: "/UseMemoCom", element: <UseMemoCom /> },
+  { path: "/UserReducerComponent", element: <UserReducerComponent /> },
 ]);
 
 export default router;
