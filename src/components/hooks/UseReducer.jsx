@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
 import { useReducer } from "react"
 import { useState } from "react"
-import UserContext from "../../context/UserContext";
+import DataContext from "../../context/DataContext";
 export default function UseReducerComponent() {
 
-  const user = useContext(UserContext)
+  const user = useContext(DataContext)
 
   const initialTodos = [
     { id: "1", title: "TODO 1", complete: true },

@@ -15,6 +15,7 @@ import RenderLogger from "../components/hooks/RenderLogger";
 import TodoContainer from "../components/hooks/TodoContainer";
 import UseReducerComponent from "../components/hooks/UseReducer";
 import TabContainer from "../components/hooks/tabs/TabContainer";
+import ComponentA from "../components/hooks/useContext/ComponentA";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
     { path: "/todo", element: (<TodoContainer />) },
     { path: "/useReducer", element: (<UseReducerComponent />) },
     { path: "/tabs", element: (<TabContainer />) },
+    { path: "/a", element: (<ComponentA />) },
 ])
 
 export default router;
