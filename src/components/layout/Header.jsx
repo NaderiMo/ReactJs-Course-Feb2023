@@ -10,6 +10,7 @@ export default function Header() {
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/users">UserManagement</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

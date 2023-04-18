@@ -13,6 +13,7 @@ import CheckUseState from "../components/hooks/UseState";
 import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Login from "../components/Login";
+import UserManagement from "../components/UserManagement";
 
 const router = createBrowserRouter([
     // { path: "/", element: (<div>Hello</div>)},
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
     )
     , children:[
         { path: "/login", element: (<Login />)},
-        { path: "/signup", element: (<div><h1>SignUp</h1></div>)}
+        { path: "/signup", element: (<div><h1>SignUp</h1></div>)},
+        { path: "/users", element: (<div><h1>UserManagement</h1></div>)},
     ]},
     
 
@@ -41,6 +43,7 @@ const router = createBrowserRouter([
     { path: "/todo", element: (<TodoContainer />)},
     { path: "/reducer", element: (<UseReducerComponent />)},
     { path: "/a", element: (<ComponentA />)},
+    { path: "/users", element: (<UserManagement />)},
   ])
 
   export default router;

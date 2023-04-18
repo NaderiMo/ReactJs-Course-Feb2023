@@ -7,8 +7,17 @@ import Login from './components/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RouterProvider } from 'react-router-dom';
 import router from './configs/routers';
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import userReducer from './store/userSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const reduxStore = configureStore({
+  reducer: {
+    users:userReducer
+  }
+});
 
 root.render(
   <React.StrictMode>
@@ -20,9 +29,9 @@ root.render(
       </Row>
     </Container> */}
 
-
-    <RouterProvider router={router} />
-
+    <Provider store={reduxStore}>
+      <RouterProvider router={router} />
+    </Provider>
 
   </React.StrictMode>
 );
