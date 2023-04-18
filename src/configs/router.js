@@ -11,6 +11,7 @@ import Footer from "../components/layout/Footer";
 import Header from "../components/layout/Header";
 import Login1 from "../components/Login1";
 import Login2 from "../components/Login2";
+import UserManagement from "../components/UserManagement";
 import RenderLogger from "../components/hooks/RenderLogger";
 import TodoContainer from "../components/hooks/TodoContainer";
 import UseReducerComponent from "../components/hooks/UseReducer";
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
         children: [
             { path: "/login1", element: (<Login1 />) },
             { path: "/login2", element: (<Login2 />) },
+            { path: "/UserManagement", element: (<UserManagement />) },
             { path: "/signup", element: (<div><h1>SignUp</h1></div>) }
         ]
     },

@@ -11,6 +11,7 @@ export default function Header() {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/login1">Login (Axios)</Nav.Link>
                         <Nav.Link href="/login2">Login (req)</Nav.Link>
+                        <Nav.Link href="/UserManagement">UserManagement</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
