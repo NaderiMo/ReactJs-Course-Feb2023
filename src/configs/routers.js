@@ -7,6 +7,7 @@ import RenderLogger from "../components/hooks/RenderLog";
 // import Counter from "../components/Counter";
 import Timer from "../components/hooks/Timer";
 import TodoContainer from "../components/hooks/TodoContainer";
+import ComponentA from "../components/hooks/useContext/ComponentA";
 import UseReducerComponent from "../components/hooks/UseReducer";
 import CheckUseState from "../components/hooks/UseState";
 import Footer from "../components/layout/Footer";
@@ -38,7 +39,8 @@ const router = createBrowserRouter([
     { path: "/counter", element: (<Counter />)},
     { path: "/renderLog", element: (<RenderLogger />)},
     { path: "/todo", element: (<TodoContainer />)},
-    { path: "/reducer", element: (<UseReducerComponent />)}
+    { path: "/reducer", element: (<UseReducerComponent />)},
+    { path: "/a", element: (<ComponentA />)},
   ])
 
   export default router;
