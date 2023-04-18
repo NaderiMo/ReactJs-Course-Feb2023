@@ -3,7 +3,8 @@ import CardList from "../components/CardList";
 import Clock from "../components/Clock";
 import Counter from "../components/Counter";
 import Login from "../components/Login";
-import Login from "../components/hooks/Timer";
+import Timer from "../components/hooks/Timer";
+import UseReducer from "../components/hooks/UseReducer";
 
 const router = createBrowserRouter([
     {path:"/",
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   {path:"/cardlist",element:(<CardList/>)},
   {path:"/counter",element:(<Counter/>)},
   {path:"/clock",element:(<Clock/>)},
-  {path:"/components/hooks/Timer",element:(<Timer/>)}
+  {path:"/components/hooks/Timer",element:(<Timer/>)},
+  {path:"/components/hooks/UseReducer",element:(<UseReducer/>)}
   ])
   export default router
