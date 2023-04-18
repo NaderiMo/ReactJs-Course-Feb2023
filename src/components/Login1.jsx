@@ -14,7 +14,7 @@ function Login1() {
   });
   const defaultErrorState = {
     username: "",
-    password: "",
+    password: "", 
   };
   const [errorState, setErrorState] = useState(defaultErrorState);
 
