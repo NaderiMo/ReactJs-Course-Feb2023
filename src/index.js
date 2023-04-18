@@ -5,13 +5,18 @@ import CardList from './components/CardList';
 import Clock from './components/Clock';
 import Counter from './components/Counter';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import configureStore from "@reduxjs/toolkit";
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Login from './components/Login';
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-
+import {userReducer} from "./store/userSlice"
+const reduxStore=configureStore({
+  reducer:{
+    users:userReducer
+  }
+})
 const router = createBrowserRouter([
   {path:"/",
   element:(<div>hello</div>)
