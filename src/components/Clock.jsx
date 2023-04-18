@@ -5,8 +5,9 @@ function Clock({}) {
     setInterval(()=>{
         setDate(new Date())
     },1000);
+    const h1Style={backgroundColer:'#ffcc00'}
     return(<div>
-        <h1>{date.toLocaleTimeString()}</h1>
+        <h1 style={h1Style} className={Clock}>{date.toLocaleTimeString()}</h1>
       
     </div>)
     

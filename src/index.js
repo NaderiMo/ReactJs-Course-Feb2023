@@ -1,16 +1,40 @@
 import React from 'react';
+import { Col, Container ,Row} from 'react-bootstrap';
 import ReactDOM from 'react-dom/client';
 import CardList from './components/CardList';
 import Clock from './components/Clock';
+import Counter from './components/Counter';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from './components/Login';
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
+const router = createBrowserRouter([
+  {path:"/",
+  element:(<div>hello</div>)
+},
+{path:"/login",
+element:(<Login/>)
+}
+])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       {/* <CardList/> */}
-   <Clock/>
+      {/* <Counter/> */}
+      {/* <Container fluid>
+        <Row>
+          <Col md={3} xs={6}>
+            <Login/>
+          </Col>
+        </Row>
+      </Container> */}
+   {/* <Clock/> */}
+   <RouterProvider router={router}/> 
+
   </React.StrictMode>
 );
 
