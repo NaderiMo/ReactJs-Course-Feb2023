@@ -3,18 +3,26 @@
  */
 
 import axios from "axios";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 function Login1() {
+  const { id } = useParams()
   const [isLoading, setIsLoading] = useState(false);
   const [loginState, setLoginState] = useState({
     username: null,
     password: null,
   });
+
+  useEffect(() => {
+    console.log(id)
+  }, [id])
+
   const defaultErrorState = {
     username: "",
-    password: "", 
+    password: "",
   };
   const [errorState, setErrorState] = useState(defaultErrorState);
 

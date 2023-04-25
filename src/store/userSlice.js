@@ -7,9 +7,15 @@ const userSlice = createSlice({
         { id: "2", name: "bbbbb", username: "Bb" }
     ],
     reducers: {
-        //TODO: 
+        addUser: (state, action) => {
+            state.push(action.payload)
+        },
+        deleteUser: (state, action) => {
+            return state.filter((item, index) => item.id != action.payload)
+        }
+
     }
 })
 
-
+export const { addUser, deleteUser } = userSlice.actions
 export default userSlice.reducer

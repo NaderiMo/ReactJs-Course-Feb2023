@@ -5,8 +5,23 @@
 import { useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
 import req from "../configs/requests";
-
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 function Login2() {
+  const [searchParams, setSearchParams] = useSearchParams()
+  const status = searchParams.get("status")
+  const code = searchParams.get("code")
+  useEffect(() => {
+    console.log("status in query string", status)
+    console.log("code in query string", code)
+    setSearchParams({ test: "123" })
+  }, [status, code])
+
+
+
+
+
+
   const [isLoading, setIsLoading] = useState(false);
   const [loginState, setLoginState] = useState({
     username: null,
@@ -16,6 +31,7 @@ function Login2() {
     username: "",
     password: "",
   };
+
   const [errorState, setErrorState] = useState(defaultErrorState);
 
   const onChangUsername = (event) => {
