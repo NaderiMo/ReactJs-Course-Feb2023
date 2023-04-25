@@ -3,10 +3,12 @@
  */
 
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 function Login() {
+  const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [loginState, setLoginState] = useState({
     username: null,
@@ -25,6 +27,10 @@ function Login() {
   const onChangePassword = (event) => {
     setLoginState({ ...loginState, password: event.target.value });
   };
+
+  useEffect(() => {
+    console.log(id);
+  }, [id]);
 
   const submit = () => {
     if (!loginState.username) {

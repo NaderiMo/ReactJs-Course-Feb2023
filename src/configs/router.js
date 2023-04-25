@@ -3,12 +3,13 @@ import CardList from "../components/CardList";
 import Clock from "../components/Clock";
 import Login1 from "../components/Login1";
 import Counter from "../components/Counter";
-import { Container, Navbar, NavDropdown, Nav, Col, Row } from "react-bootstrap";
+import { Container, Navbar, Nav, Col, Row } from "react-bootstrap";
 import HookCounter from "../components/hooks/HookCounter";
 import RenderLog from "../components/hooks/RenderLog";
 import TodoContainer from "../components/hooks/TodoContainer";
 import UseMemoCom from "../components/hooks/UseMemo";
 import UserReducerComponent from "../components/hooks/UserReducer";
+import UserManagement from "../components/UserManagement";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
               <Nav className="me-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/UserManagement">UserManagement</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -40,7 +42,7 @@ const router = createBrowserRouter([
       </>
     ),
     children: [
-      { path: "/login", element: <Login1 /> },
+      { path: "/login/:id?", element: <Login1 /> },
       {
         path: "/signup",
         element: (
@@ -59,6 +61,7 @@ const router = createBrowserRouter([
   { path: "/TodoContainer", element: <TodoContainer /> },
   { path: "/UseMemoCom", element: <UseMemoCom /> },
   { path: "/UserReducerComponent", element: <UserReducerComponent /> },
+  { path: "/UserManagement", element: <UserManagement /> },
 ]);
 
 export default router;
