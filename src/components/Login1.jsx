@@ -1,30 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
 import axios from "axios";
 import req from "../configs/requests";
-import { useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-function Login() {
-    const [searchParams, setSearchParams] = useSearchParams()
-    const status = searchParams.get("status");
-    const code = searchParams.get("code");
-
-    // useEffect(() => {
-    //     console.log("status=", status);
-    // }, [status]);
-
-    useEffect(() => {
-        console.log("status=", status);
-        console.log("code=", code);
-        // setSearchParams()
-        setSearchParams({ test: 125 })
-    }, [status, code]);
-
+function Login1() {
+    const { id } = useParams();
     const defaultErrorState = {
         userNameError: null,
         passwordError: null
     }
+
+    useEffect(() => {
+        console.log(id);
+
+    }, [id]);
 
     const [isLoading, setIsLoading] = useState(false)
     const [loginState, setLoginState] = useState({
@@ -94,4 +84,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default Login1;

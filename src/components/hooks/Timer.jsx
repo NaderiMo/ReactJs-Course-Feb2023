@@ -9,6 +9,9 @@ export default function Timer() {
         setTimeout(() => {
             setCount((count) => count + 1);
         }, 1000);
+        return () => {
+            clearTimeout();
+        }
     });
 
     return <h1>rendered {count} times!</h1>
